@@ -3,13 +3,14 @@ import { StyleSheet, View, FlatList, Image } from "react-native";
 import ProductsScreen from "./src/screens/ProductsScreen";
 import ProductDetailsScreen from "./src/screens/ProductDetailsScreen";
 import products from "./src/data/products";
+import ShoppingCart from "./src/screens/ShoppingCart";
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <ProductsScreen />  */}
-      <ProductDetailsScreen />
-
+      {/* <ProductDetailsScreen /> */}
+      <ShoppingCart />
       <FlatList
         data={products}
         renderItem={({ item }) => (
