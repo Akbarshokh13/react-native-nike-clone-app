@@ -5,8 +5,8 @@ import {
   FlatList,
   useWindowDimensions,
   Text,
-  ScrollView, 
-  Pressable
+  ScrollView,
+  Pressable,
 } from "react-native";
 import products from "../data/products";
 
@@ -15,36 +15,34 @@ const ProductDetailsScreen = () => {
 
   const { width } = useWindowDimensions();
 
-  const addToCart = () => {
-   
-  };
+  const addToCart = () => {};
 
   return (
     <View>
       {/* Image Carousel */}
       <ScrollView>
-      <FlatList
-        data={product.images}
-        renderItem={({ item }) => (
-          <Image source={{ uri: item }} style={{ width, aspectRatio: 1 }} />
-        )}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        pagingEnabled
-      />
-     <View style={{ padding: 20 }}>
-      {/* Title */}
-      <Text style={styles.title}>{product.name}</Text>
-      {/* Price */}
-      <Text style={styles.price}>${product.price}</Text>
-      {/* Description */}
-      <Text style={styles.description}>{product.description}</Text>
-      </View>
+        <FlatList
+          data={product.images}
+          renderItem={({ item }) => (
+            <Image source={{ uri: item }} style={{ width, aspectRatio: 1 }} />
+          )}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          pagingEnabled
+        />
+        <View style={{ padding: 20 }}>
+          {/* Title */}
+          <Text style={styles.title}>{product.name}</Text>
+          {/* Price */}
+          <Text style={styles.price}>${product.price}</Text>
+          {/* Description */}
+          <Text style={styles.description}>{product.description}</Text>
+        </View>
       </ScrollView>
       {/* Add to cart button */}
-      
+
       <Pressable onPress={addToCart} style={styles.button}>
-       <Text style={styles.buttonText}>Add to Cart</Text>
+        <Text style={styles.buttonText}>Add to Cart</Text>
       </Pressable>
 
       {/* Navigation icon */}
@@ -61,7 +59,7 @@ const styles = StyleSheet.create({
   price: {
     fontWeight: "500",
     fontSize: 16,
-    letterSpacing: 1.5
+    letterSpacing: 1.5,
   },
   description: {
     marginVertical: 10,
@@ -71,23 +69,21 @@ const styles = StyleSheet.create({
   },
 
   button: {
-  position: 'absolute', 
-  backgroundColor: 'black', 
-  bottom: 30, 
-  width: '90%',
-  alignSelf: 'center',
-  padding: 20, 
-  borderRadius: 100, 
-  alignItems: 'center' 
+    position: "absolute",
+    backgroundColor: "black",
+    bottom: 30,
+    width: "90%",
+    alignSelf: "center",
+    padding: 20,
+    borderRadius: 100,
+    alignItems: "center",
   },
 
   buttonText: {
-   color: 'white', 
-   fontWeight: '500', 
-   fontSize: 16,
-  }
+    color: "white",
+    fontWeight: "500",
+    fontSize: 16,
+  },
 });
-
-
 
 export default ProductDetailsScreen;

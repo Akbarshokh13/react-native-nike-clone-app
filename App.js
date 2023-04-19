@@ -1,31 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, FlatList, Image } from "react-native";
-import ProductsScreen from "./src/screens/ProductsScreen";
-import ProductDetailsScreen from "./src/screens/ProductDetailsScreen";
-import products from "./src/data/products";
-import ShoppingCart from "./src/screens/ShoppingCart";
+import { StyleSheet, View } from "react-native";
+import Navigation from "./src/Navigation"; 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <ProductsScreen />  */}
-      {/* <ProductDetailsScreen /> */}
-      <ShoppingCart />
-      <FlatList
-        data={products}
-        renderItem={({ item }) => (
-          <View style={styles.ItemContainer}>
-            <Image
-              source={{
-                uri: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/nike/nike1.png",
-              }}
-              style={styles.image}
-            />
-          </View>
-        )}
-        numColumns={2}
-      />
-
+       <Navigation />
       <StatusBar style="auto" />
     </View>
   );
